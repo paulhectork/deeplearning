@@ -31,7 +31,7 @@ Parameters are also called **weights**.
 We have 
 - $$f$$ a prediction function defined for a single set of parameters $$\theta \in \Theta$$. 
 - $$f(x)$$ is an application of $$f$$ 
-- $$x$$ a single set of data points $$x$$.
+- $$x$$ a single set of data points.
 
 How do we measure the efficiency of $$f$$ ?
 
