@@ -92,6 +92,8 @@ $$L(\theta, D) = \frac{1}{N} \sum_{i=1}^{N} || f_{\theta}(x_{i}) - y_{i} ||^{2}$
 
 (In other words, $$L$$ is the average of the squares of the distance between actual result and expected result)
 
+*Note: $$\theta^{T}$$ is the transformation of $$\theta$$ and $$\theta^{T}x is $$x$$ multiplied by $$\theta^{T}.* 
+
 If we express the dataset as matrices:
 - $$X = [x_{1} | ... | x_{N}]^{T} \in \mathbb{R}^{in \times N}$$,
 - $$Y = [y_{1} | ... | y{N}]^{T} \in \mathbb{R}^{N \times out}$$, 
