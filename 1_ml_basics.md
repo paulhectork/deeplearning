@@ -62,16 +62,27 @@ Risk and loss are **formalizations** of the idea of *best prediction*. In short,
     - in other words, $$l$$ compares actual output of $$f$$ to expected output $$y$$
 
 #### **$$R$$ - Risk = average loss over all data points**
-- in **statistical learning**, $$R(f) = \mathbb{E}_{(x,y) \sim Z}[l(f(x),y)]$$. 
-    - we average losses for all data points $$(x,y)$$ randomly sampled from a distribution $$Z$$.
-    - $$Z$$ is a probability distribution made of tuples $$(x,y)$$ where $$x$$ is the input data points and $$y$$ is the output data points.
-    - in practice, the entire $$Z$$ cannot be known (we cannot know the entierty of the dataset a model will ever be used on) => we need another measure
-- since $$Z$$ can never be known, we **define $$Z_{2}$$**, a known subset of $$Z$$ such that $$(x,y) \in Z_{2}$$ and $$Z_{2} \in Z$$.
-- **empirical risk** is a measure of risk where all values of $$Z_{2}$$ are known:
-    - $$R_{Z_{2}}(f) = \frac{1}{|Z_{2}|} \sum_{z \in Z_{2}}^{} l(f(x),y)$$
-    - $$Z_{2}$$ is a known set of samples $$(x,y) \in Z$$ => $$Z$$ is our dataset and a subset of all possible occurrences $$Z$$. 
 
-**$$L(\theta, Z_{2})$$ - loss function = cost for all data points for a single set of parameters \theta**
+1. **in statistical learning**
+
+$$R(f) = \mathbb{E}_{(x,y) \sim Z}[l(f(x),y)]$$
+ 
+- we average losses for all data points $$(x,y)$$ randomly sampled from a distribution $$Z$$.
+- $$Z$$ is a probability distribution made of tuples $$(x,y)$$ where $$x$$ is the input data points and $$y$$ is the output data points.
+- in practice, the entire $$Z$$ cannot be known (we cannot know the entierty of the dataset a model will ever be used on) => we need another measure
+- since $$Z$$ can never be known, we **define $$Z_{2}$$**, a known subset of $$Z$$ such that $$(x,y) \in Z_{2}$$ and $$Z_{2} \in Z$$.
+
+2. **empirical risk**
+
+Empirial risk is a meaure used when the entire $$Z$$ cannot be known: we define a subset of $$D \in Z$$ in which all values are known and calculate the risk on it.
+
+$$R_{D}(f) = \frac{1}{|D|} \sum_{z \in D}^{} l(f(x),y)$$
+
+- $$D$$ is a known set of samples $$(x,y) \in Z$$ => $$D$$ is our dataset and a subset of all possible occurrences $$Z$$. 
+
+2. **$$L(\theta, Z_{2})$$ - loss function**
+
+The loss function is a measure of the cost for all data points for a single set of parameters $$\theta$$
 - it is expressed as: $$L(\theta, Z_{2})$$
 - our goal is to **minimize the loss function $$L$$ for a single \theta.
 
