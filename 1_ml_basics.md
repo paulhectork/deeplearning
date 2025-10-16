@@ -18,5 +18,5 @@ Different ML techniques:
 
 A supervised algorithm takes an input space $$X$$ ($$\mathbb{R}^{n}$$) and **makes a prediction** in space $$Y$$ ($$\mathbb{R}^{m}$$). $$\mathbb{R}^{n}$$ and $$\mathbb{R}^{m}$$ are vector spaces with $$n \in \mathbb{R}$$, $$m \in \mathbb{R}$$, $$n > 0$$, $$m > 0$$.
 
-A model is defined in a **model space** $$F = \{f_{\theta} : X \rightarrow Y|\theta \in \Theta\}$$
+A model is defined in a **model space** $$F = \\{f_{\theta} : X \rightarrow Y|\theta \in \Theta\\}$$
 - the model space is a **function space**, that is a family of all functions that transform input space $$X$$ to $$Y$$.
