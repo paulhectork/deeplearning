@@ -81,7 +81,7 @@ $$R_{D}(f) = \frac{1}{|D|} \sum_{z \in D}^{} l(f(x),y)$$
 
 2. **$$L(\theta, D)$$ - loss function**
 
-- The loss function is a measure of the cost for all data points for a single set of parameters $$\theta$$ and for a single dataset $$D$$.
+- the loss function is a measure of the cost for all data points for a single set of parameters $$\theta$$ and for a single dataset $$D$$.
 - it is expressed as: $$L(\theta, D)$$
 - our goal is to **minimize the loss function $$L$$ for a single $$\theta$$.
 
