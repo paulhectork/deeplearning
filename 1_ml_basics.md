@@ -76,7 +76,7 @@ $$R(f) = \mathbb{E}_{(x,y) \sim Z}[l(f(x),y)]$$
 
 $$R_{D}(f) = \frac{1}{|D|} \sum_{z \in D}^{} l(f(x),y)$$
 
-- Empirial risk is a meaure used when the entire $$Z$$ cannot be known: we define a subset of $$D \in Z$$ in which all values are known and calculate the risk on it.
+- empirial risk is a meaure used when the entire $$Z$$ cannot be known: we define a subset of $$D \in Z$$ in which all values are known and calculate the risk on it.
 - $$D$$ is a known set of samples $$(x,y) \in Z$$ => $$D$$ is our dataset and a subset of all possible occurrences $$Z$$. 
 
 2. **$$L(\theta, Z_{2})$$ - loss function**
