@@ -17,8 +17,10 @@ Contrary to most scientific methods (i.e., physics), ML isn't about building a m
 
 Different learning scenarios:
 - **supervised learning**: in your dataset, you include examples of desired outputs for your model. 
+    - tasks: classification, regression...
     - => generalisation issues
 - **unsupervised learning**: the input is raw data points without desired outputs.
+    - tasks: clustering, density estimation, outlier detection
 - **other**: semi-supervised, self-supervised...
 
 Different ML techniques:
@@ -73,12 +75,21 @@ Risk and loss are **formalizations** of the idea of *best prediction*. In short,
 - it is expressed as: $$L(\theta, Z_{2})$$
 - our goal is to **minimize the loss function $$L$$ for a single \theta.
 
-
 ### Train, validation, test data
 
 To avoid overfitting, in supervised learning, $$Z_{2}$$ is split into:
 - $$Z_{2train}$$: training dataset, used to train the model
 - $$Z_{2val}$$: validation dataset, not part of training, used to verify the loss
 - $$Z_{2test}$$: test dataset. Not part of training or validation, used ensure the model does not overfit.
+
+### Examples
+
+#### Linear lest square regression
+
+In model space $$F = \\{ f_{\theta} : x \in \mathbb{R}^{in} \rightarrow \theta^{T}x \in \mathbb{R}^{out} | \theta \in \mathbb{R}^{in \times out} \\}$$, linear least square is a loss function that selects the parameter $$\hat \theta$$ that minimises:
+
+$$L(\theta, D) = \frac{1}{N} \sum_{i=1}^{N} || f_{\theta}(x_{i}) - y_{i} ||^{2}$$
+
+(In other words, $$L$$ is the average of the squares of the distance between actual result and expected result)
 
 
