@@ -13,8 +13,8 @@ Having:
     - in short, $$Y_k = X_{k+1}$$
     - (in other words, the output of the functions in a family can be piped to the input of the functions in the next family)
 
-=> $$F_k$$ ($$k \in {1, ..., K}$$), is the following family of functions: $$F_k = \\{ f_{\theta}: X_k \rightarrow Y_k | \theta \in \Theta_{k} \\}$$
-- since the $$Y_k = X_{k-1}$$, $$F_k = \\{ f_{\theta}: X_k \rightarrow X_{k+1} | \theta \in \Theta_{k} \\}$$
+=> for $$k \in {1, ..., K}$$, a family of functions $$F_k$$ can be written as: $$F_k = \\{ f_{\theta}: X_k \rightarrow Y_k | \theta \in \Theta_{k} \\}$$
+- since the $$Y_k = X_{k-1}$$, we can say that $$F_k = \\{ f_{\theta}: X_k \rightarrow X_{k+1} | \theta \in \Theta_{k} \\}$$
 
 A model space $$F$$ can be defined as the space of the composite functions:
 
