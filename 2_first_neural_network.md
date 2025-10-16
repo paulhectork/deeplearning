@@ -13,13 +13,13 @@ Having:
     - in short, $$Y_k = X_{k+1}$$
     - (in other words, the output of the functions in a family can be piped to the input of the functions in the next family)
 
-=> for $$k \in {1, ..., K}$$, a family of functions $$F_k$$ can be written as: $$F_k = \\{ f_{\theta}: X_k \rightarrow Y_k | \theta \in \Theta_{k} \\}$$
-- in other wordsm $$F_k$$ is 
+For $$k \in {1, ..., K}$$, a family of functions $$F_k$$ can be written as: $$F_k = \\{ f_{\theta}: X_k \rightarrow Y_k | \theta \in \Theta_{k} \\}$$
+- in other words, $$F_k$$ is 
     - the family of all functions that performs a transformation $$X_k \rightarrow Y_k$$
     - for all parameters $$\theta \in \Theta_k$$
 - since the $$Y_k = X_{k-1}$$, we can say that $$F_k = \\{ f_{\theta}: X_k \rightarrow X_{k+1} | \theta \in \Theta_{k} \\}$$
 
-A model space $$F$$ can be defined as the space of the composite functions:
+A model space $$F$$ can be defined as **the space of the composite functions**:
 
 $$F = \\{ f_{K} \circ ... \circ f_{1} | f_{1} \in F_{1}, ..., F_{K} \\}$$
 
