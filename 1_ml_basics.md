@@ -86,6 +86,8 @@ To avoid overfitting, in supervised learning, $$Z_{2}$$ is split into:
 
 #### Linear lest square regression
 
+1. Base function
+
 In model space $$F = \\{ f_{\theta} : x \in \mathbb{R}^{in} \rightarrow \theta^{T}x \in \mathbb{R}^{out} | \theta \in \mathbb{R}^{in \times out} \\}$$, with $$\theta^{T}$$ the transposition of $$\theta$$, linear least square is a loss function that selects the parameter $$\hat \theta$$ that minimises:
 
 $$L(\theta, D) = \frac{1}{N} \sum_{i=1}^{N} || f_{\theta}(x_{i}) - y_{i} ||^{2}$$
@@ -94,7 +96,9 @@ $$L(\theta, D) = \frac{1}{N} \sum_{i=1}^{N} || f_{\theta}(x_{i}) - y_{i} ||^{2}$
 
 *Note: $$\theta^{T}$$ is the transformation of $$\theta$$ and $$\theta^{T}x is $$x$$ multiplied by $$\theta^{T}.* 
 
-If we express the dataset as matrices:
+2. Using matrices
+
+If we group all inputs and outputs into matrices:
 - $$X = [x_{1} | ... | x_{N}]^{T} \in \mathbb{R}^{in \times N}$$,
 - $$Y = [y_{1} | ... | y{N}]^{T} \in \mathbb{R}^{N \times out}$$, 
 - in other words, $$X$$ and $$Y$$ are transposition of matrices containing all of the inputs (for $$X$$) and outputs ($$Y$$)
