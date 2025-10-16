@@ -100,7 +100,7 @@ $$L(\theta, D) = \frac{1}{N} \sum_{i=1}^{N} || f_{\theta}(x_{i}) - y_{i} ||^{2}$
 
 If we group all inputs and outputs into matrices:
 - $$X = [x_{1} | ... | x_{N}]^{T} \in \mathbb{R}^{in \times N}$$,
-- $$Y = [y_{1} | ... | y{N}]^{T} \in \mathbb{R}^{N \times out}$$, 
+- $$Y = [y_{1} | ... | y_{N}]^{T} \in \mathbb{R}^{N \times out}$$, 
 - in other words, $$X$$ and $$Y$$ are transposition of matrices containing all of the inputs (for $$X$$) and outputs ($$Y$$)
 
 $$L$$ can then be written as:
