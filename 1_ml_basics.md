@@ -79,18 +79,18 @@ $$R_{D}(f) = \frac{1}{|D|} \sum_{z \in D}^{} l(f(x),y)$$
 - empirial risk is a meaure used when the entire $$Z$$ cannot be known: we define a subset of $$D \in Z$$ in which all values are known and calculate the risk on it.
 - $$D$$ is a known set of samples $$(x,y) \in Z$$ => $$D$$ is our dataset and a subset of all possible occurrences $$Z$$. 
 
-2. **$$L(\theta, Z_{2})$$ - loss function**
+2. **$$L(\theta, D)$$ - loss function**
 
-The loss function is a measure of the cost for all data points for a single set of parameters $$\theta$$
-- it is expressed as: $$L(\theta, Z_{2})$$
+The loss function is a measure of the cost for all data points for a single set of parameters $$\theta$$ and for a single dataset $$D$$.
+- it is expressed as: $$L(\theta, D)$$
 - our goal is to **minimize the loss function $$L$$ for a single \theta.
 
 ### Train, validation, test data
 
 To avoid overfitting, in supervised learning, $$Z_{2}$$ is split into:
-- $$Z_{2train}$$: training dataset, used to train the model
-- $$Z_{2val}$$: validation dataset, not part of training, used to verify the loss
-- $$Z_{2test}$$: test dataset. Not part of training or validation, used ensure the model does not overfit.
+- $$D_{train}$$: training dataset, used to train the model
+- $$D_{val}$$: validation dataset, not part of training, used to verify the loss
+- $$D_{test}$$: test dataset. Not part of training or validation, used ensure the model does not overfit.
 
 ### Examples
 
