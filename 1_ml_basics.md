@@ -9,7 +9,7 @@
 - training set: $$D$$, validation set $$D_{val}$$, test set $$D_{set}$$
 - cost function: $$l(y´,y)$$ for a prediction $$y' \in Y$$ and a target $$y \in Y$$
 - loss function: $$L(\theta,D)$$ for parameters $$\theta \in \Theta$$ and dataset $$D$$
-- training samples: $$(x_{1}, y_{1}), ..., (x_{N}, y_{N})$$ with number of training samples (data points): $$N = |D |$$
+- training samples: $$D = \\{(x_{1}, y_{1}), ..., (x_{N}, y_{N})\\}$$ with number of training samples (data points): $$N = |D |$$
 
 ## Intro
 
