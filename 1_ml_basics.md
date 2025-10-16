@@ -104,7 +104,7 @@ $$L(\theta, D) = \frac{1}{N} \sum_{i=1}^{N} || f_{\theta}(x_{i}) - y_{i} ||^{2}$
 
 (In other words, $$L$$ is the average of the squares of the distance between actual result and expected result)
 
-*Note*: $$\theta^{T}$$ is the transformation of $$\theta$$ and $$\theta^{T}x is $$x \times \theta^{T}$$.
+*Note*: $$\theta^{T}$$ is the transformation of $$\theta$$ and $$\theta^{T}x$$ is $$x \times \theta^{T}$$.
 
 2. **Using matrices**
 
