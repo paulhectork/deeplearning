@@ -97,7 +97,7 @@ If we express the dataset as matrices:
 - $$Y = [y_{1} | ... | y{N}]^{T} \in \mathbb{R}^{N \times out}$$, 
 - in other words, $$X$$ and $$Y$$ are transposition of matrices containing all of the inputs (for $$X$$) and outputs ($$Y$$)
 
-$$L$$ can be written as:
+$$L$$ can then be written as:
 
 $$L(\theta, D) = \frac{1}{N} ||\theta^{T}X - Y||^{2}$$
 
