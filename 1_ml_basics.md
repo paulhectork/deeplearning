@@ -99,6 +99,6 @@ If we express the dataset as matrices:
 
 $$L$$ can be written as:
 
-$$L(\theta, D) = \frac{1}{N} ||\theta^{T}X - Y||^{2}
+$$L(\theta, D) = \frac{1}{N} ||\theta^{T}X - Y||^{2}$$
 
-(In other words, square of distance between the actual output matrix ($$\theta^{T}X) and the expected output matrix $$Y$$, divided by the number of samples in the dataset)
+(In other words, square of distance between the actual output matrix ($$\theta^{T}X$$) and the expected output matrix $$Y$$, divided by $$N$$, the number of samples in the dataset)
