@@ -16,7 +16,48 @@ Different ML techniques:
 
 ## Supervised parametric learning
 
-A supervised algorithm takes an input space $$X$$ ($$\mathbb{R}^{n}$$) and **makes a prediction** in space $$Y$$ ($$\mathbb{R}^{m}$$). $$\mathbb{R}^{n}$$ and $$\mathbb{R}^{m}$$ are vector spaces with $$n \in \mathbb{R}$$, $$m \in \mathbb{R}$$, $$n > 0$$, $$m > 0$$.
+A supervised algorithm takes an input space $$X$$ (= $$\mathbb{R}^{n}$$) and **makes a prediction** in space $$Y$$ (= $$\mathbb{R}^{m}$$). $$\mathbb{R}^{n}$$ and $$\mathbb{R}^{m}$$ are vector spaces with $$n \in \mathbb{R}$$, $$m \in \mathbb{R}$$, $$n > 0$$, $$m > 0$$.
 
 A model is defined in a **model space** $$F = \\{f_{\theta} : X \rightarrow Y|\theta \in \Theta\\}$$
 - the model space is a **function space**, that is a family of all functions that transform input space $$X$$ to $$Y$$.
+- $$f$$ are parametric functions
+- $$\Theta$$ is the set of all possible parameters. $$\theta$$ is an instance (a specific set of parameters)
+- the goal is to **optimise the parameters $$\theta$$** to find the best predictor function $$f$$.
+
+Parameters are also called **weights**.
+
+### Risk and loss
+
+We have 
+- $$f$$ a prediction function defined for a single set of parameters $$\theta \in \Theta$$. 
+- $$f(x)$$ is an application of $$f$$ 
+- $$x$$ a single set of data points $$x$$.
+
+How do we measure the efficiency of $$f$$ ?
+
+Risk and loss are **formalizations** of the idea of *best prediction*. In short, 
+- for a single set of parameters, there is **1 risk, several losses**
+- **cost** measures the quality of a single prediciton for a single set of data points
+- **risk** is the average of all losses for all data points for this set of parameters.
+
+**$$l(f(x),y)$$ - cost function**: $$l: Y \times Y \rightarrow \mathbb{R}$$
+- it can be expressed as: $$l(y',y)$$, with 
+    - $$y$$: the expected output
+    - $$y'$$: the actual output of a prediction $$f$$
+    - in other words, $$l$$ compares actual output of $$f$$ to expected output $$y$$
+
+**$$R$$ - Risk = average loss over all data points**: 
+- in **statistical learning**, $$R(f) = \mathbb{E}_{(x,y) \sim Z}[l(f(x),y)]$$. 
+    - we average losses for all data points $$(x,y)$$ randomly sampled from a distribution $$Z$$.
+    - $$Z$$ is a probability distribution made of tuples $$(x,y)$$ where $$x$$ is the input data points and $$y$$ is the output data points.
+    - in practice, the entire $$Z$$ cannot be known (we cannot know the entierty of the dataset a model will ever be used on) => we need another measure
+- since $$Z$$ can never be known, we **define $$Z_{2}$$**, a known subset of $$Z$$ such that $$(x,y) \in Z_{2}$$ and $$Z_{2} \in Z$$.
+- **empirical risk** is a measure of risk where all values of $$Z_{2}$$ are known:
+    - $$R_{Z_{2}}(f) = \frac{1}{|Z_{2}|} \sum{z \in Z_{2}} l(f(x),y)$$
+    - $$Z_{2}$$ is a known set of samples $$(x,y) \in Z$$ => $$Z$$ is our dataset and a subset of all possible occurrences $$Z$$. 
+
+**$$L(\theta, Z_{2})$$ - loss function = cost for all data points for a single set of parameters**
+- it is expressed as: $$L(\theta, Z_{2})$$
+
+
+
