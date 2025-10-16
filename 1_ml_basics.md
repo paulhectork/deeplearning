@@ -58,8 +58,8 @@ Risk and loss are **formalizations** of the idea of *best prediction*. In short,
     - $$R_{Z_{2}}(f) = \frac{1}{|Z_{2}|} \sum_{z \in Z_{2}}^{} l(f(x),y)$$
     - $$Z_{2}$$ is a known set of samples $$(x,y) \in Z$$ => $$Z$$ is our dataset and a subset of all possible occurrences $$Z$$. 
 
-**$$L(\theta, Z_{2})$$ - loss function = cost for all data points for a single set of parameters**
+**$$L(\theta, Z_{2})$$ - loss function = cost for all data points for a single set of parameters \theta**
 - it is expressed as: $$L(\theta, Z_{2})$$
-
+- our goal is to **minimize the loss function $$L$$ for a single \theta.
 
 
