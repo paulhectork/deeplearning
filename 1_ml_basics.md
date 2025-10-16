@@ -1,5 +1,16 @@
 # ML Basics
 
+## Notations 
+
+(notations are different in the `Supervised parametric learning` part)
+
+- input space: $$X = \mathbb{R}^{in}$$ and output space $$X = \mathbb{R}^{out}$$
+- model space: $$F = {f_{\theta}: X -> Y | \theta \in \Theta}$$
+- training set: $$D$$, validation set $$D_{val}$$, test set $$D_{set}$$
+- cost function: $$l(y´,y)$$ for a prediction $$y' \in Y$$ and a target $$y \in Y$$
+- loss function: $$L(\theta,D)$$ for parameters $$\theta \in \Theta$$ and dataset $$D$$
+- training samples: $$(x_{1}, y_{1}), ..., (x_{N}, y_{N}) with number of training samples (data points): $$N = |D|$$
+
 ## Intro
 
 Contrary to most scientific methods (i.e., physics), ML isn't about building a mathematical model of reality. It is about being able to predict an outcome based on a set of data points, without formalizing a model of reality. 
@@ -61,5 +72,13 @@ Risk and loss are **formalizations** of the idea of *best prediction*. In short,
 **$$L(\theta, Z_{2})$$ - loss function = cost for all data points for a single set of parameters \theta**
 - it is expressed as: $$L(\theta, Z_{2})$$
 - our goal is to **minimize the loss function $$L$$ for a single \theta.
+
+
+### Train, validation, test data
+
+To avoid overfitting, in supervised learning, $$Z_{2}$$ is split into:
+- $$Z_{2train}$$: training dataset, used to train the model
+- $$Z_{2val}$$: validation dataset, not part of training, used to verify the loss
+- $$Z_{2test}$$: test dataset. Not part of training or validation, used ensure the model does not overfit.
 
 
