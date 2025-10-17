@@ -2,7 +2,7 @@
 
 ## Chapter 2
 
-Not sure I understand this equation for MLPs ? 
+### Not sure I understand this equation for MLPs ? 
 
 $$F = \\{ f_{K} \circ ... \circ f_{1} | f_{1} \in F_{1}, ..., F_{K} \\}$$
 
@@ -20,3 +20,4 @@ $$\\{ f_{\theta_1k_3} \circ f_{\theta_2k_3} \circ f_{\theta_1k_2} \circ ... \cir
 - toutes les fonctions $$f$$ dans chaque famille $$F_k$$
 - tous les paramètres $$\theta$$ dans chaque famille $$\Theta_k$$
 
+EN BREF: je comprends pas trop où passent les $$\theta$$ dans cette équation.
