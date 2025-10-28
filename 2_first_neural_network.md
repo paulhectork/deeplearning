@@ -192,4 +192,7 @@ class MLP(nn.Module):
 mlp = MLP(inp, h, out)
 ```
 
+---
+
+## Loss
 
