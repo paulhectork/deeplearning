@@ -137,7 +137,9 @@ Hidden layers are layers that are neither inputs nor outputs of the model: they 
 MLPs are **a simple succession of linear and non-linear layers**.
 - it is defined by a **set of hyperparameters**: number of layers, input and output dimensions, non-linearity used.
 - the hyperparameters defines a **model space**, parametrized by the concatenation of all the weights of all the linear layers.
-- then, the MLP is just a composition of layers $$F_n$$ alternating with activation functions $$a$$ : $$F_n \circ a \circ F_{n-1} \circ a \circ ... \circ a \circ F_1$$
+- then, the MLP is just a composition of layers all functions $$f \in F_n$$ alternating with an activation function $$a$$ : 
+
+$$F = \\{ f_{K} \circ a \circ ... \circ a \circ f_{1} | f_{1} \in F_{1}, ..., F_{K} \\}$$
 
 ### Example: 2-layer MLPs
 
