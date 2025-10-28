@@ -31,8 +31,26 @@ Then,
 
 ### Linear layers
 
-A linear layer 
+A linear layer:
 - **implements a linear operation**
 - is defined by:
     - the **dimensions** of its input $$n_{in}$$ and outputs $$n_{out}$$
-    - a **weight matrix** $$W \in \mathbb{R}^{n_{out} \times n_{in}}$$
+    - a **weight matrix** $$W \in \mathbb{R}^{n_{out} \times n_{in}}$$ (more on that below)
+
+A linear layer is almost always an **afine layer** that performs:
+
+$$x \rightarrow W \times x + b$$
+
+Where:
+- $$x$$ is an input feature (usually matrix or vector), $$x \in \mathbb{R}^{n_{in}}$$,
+- $$W$$ is the weight matrix, $$W \in \mathbb{R}^{n_{out} \times n_{in}}$$ 
+- $$b$$ is a **learnable bias parameter** (matrix or vector), $$b \in \mathbb{R}^{n_{out}}$$
+
+### Weight matrices
+
+$$W$$ is the weight matrix of a linear layer.
+
+- $$W$$ is a **learnable parameter**: the goal is to optimize $$W$$ to minimize the loss function
+- $$n^{in}$$ and $$n^{out}$$ are **hyperparameters**: 
+    - they are not learned, but defined by the user
+    - they define the parametric family of function of the linear layer of $$W$$ (a layer $$L$$ is defined as the parametric family of functions that perform $$\mathbb{R}^{n_{in}} \rightarrow \mathbb{R}^{n_{out}}$$
