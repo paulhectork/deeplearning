@@ -134,7 +134,7 @@ Hidden layers are layers that are neither inputs nor outputs of the model: they 
 ## MLPs: Multi-layer perceptrons
 
 MLPs are **a simple succession of linear and non-linear layers**.
-- it is defined by a **set of hyperparameters**": number of layers, input and output dimensions, non-linearity used.
+- it is defined by a **set of hyperparameters**: number of layers, input and output dimensions, non-linearity used.
 - the hyperparameters defines a **model space**, parametrized by the concatenation of all the weights of all the linear layers.
 - then, the MLP is just a composition of layers $$F_n$$ alternating with activation functions $$a$$ : $$F_n \circ a \circ F_{n-1} \circ a \circ ... \circ a \circ F_1$$
 
@@ -173,7 +173,7 @@ class MLP(nn.Module):
     # parameters to __init__ are the model's hyperparameters
     def __init__(self, inp, h, out):
         super(MLP, self).__init__()
-        self.fc1 = nn.Linear(inp, h)
+        self.fc1 = nn.Linear(inp, h)  # `fc` = fully connected
         self.relu = nn.ReLU()
         self.fc2 = nn.Linear(h, out)
     
