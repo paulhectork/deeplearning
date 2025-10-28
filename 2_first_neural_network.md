@@ -109,7 +109,8 @@ In practice, non-linear layers are often used as **activation functions**, trans
 - $$F_n$$ outputs $$x \in \mathbb{R}^{n_{out}}$$
 - $$x$$ is transformed by the non-linear activation function
 - $$F_{n+1}$$ receives the transformed $$x$$: 
-- given a value $$x \in \mathbb{R}^{n_{in}}$$ and a $$\text{ReLU}$$ activation function, $$F_{n+1}(\text{ReLU}(F_{n}(x)))$$, with a $$ReLU$$ activation function
+- given a value $$x \in \mathbb{R}^{n_{in}}$$ and a $$\text{ReLU}$$ activation function, the application of the 2 layers to $$x$$ is:
+    $$F_{n+1}(\text{ReLU}(F_{n}(x)))$$
 
 In summary, the activation function just changes (transforms) the output before passing it to the next layer—it does not block or drop information. Introducing nonlinearity allows the network to solve more complex tasks.
 
