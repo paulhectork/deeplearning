@@ -1,8 +1,10 @@
 # First neural network
 
-## MLP: Multi-layer perceptron
+---
 
-(and not my little poney)
+## Introduction to MLPs 
+
+(MLP: Multi-layer perceptron, and not my little poney)
 
 A parametric function may be defined from **the composition of simpler paramatric functions** ([composition](https://en.wikipedia.org/wiki/Function_composition)). 
 
@@ -28,6 +30,10 @@ Then,
 - **a feature** is the output of a layer. Features are passed to the next layer.
 - **the model space is parametrized** as: $$\Theta = \Theta_1 \times ... \times \Theta_{K}$$ (product of parameter space of all layers)
 - 
+
+---
+
+## Layers
 
 ### Linear layers
 
@@ -79,7 +85,48 @@ linear_layer = nn.Linear(in_features =10, out_features =5, bias = False)
 
 ### Non-linear layers
 
-A non-linear layer **does not have any learnable parameter**: they will apply the same operation to every component of the input. Some non-linear layers:
+A non-linear layer **does not have any learnable parameter**: they will apply the same operation to every component of the input. They are often **activation functions**. Some non-linear layers:
 - **hyperbolic tangent**
-- **sigmoid**
+- **logistic, or sigmoid**
 - **ReLU (Rectified Linear Unit)**. $$\forall x \in \mathbb{R}$$, it is defined by: $$\text{ReLU}(x) = max(x,0)$$
+
+Non-linear layers are sometimes **not explicitly mentionned** in the litterature: it is often implied that linear layers are followed by non-linearity.
+
+#### In Pytorch
+
+```
+relu_layer = nn.ReLU()
+```
+
+---
+
+## MLPs: Multi-layer perceptrons
+
+MLPs are **a simple succession of linear and non-linear layers**.
+- it is defined by a **set of hyperparameters**": number of layers, input and output dimensions, non-linearity used.
+- the hyperparameters defines a **model space**, parametrized by the concatenation of all the weights of all the linear layers.
+
+### Example: 2-layer MLPs
+
+A 2 layer MLP is defined by:*
+- $$\text{in}$$ and $$\text{out}$$, input and output dimensions
+- $$h$$, the dimension of the output of the 1st linear layer (= input dimension of the 2nd linear layer)
+- the type of non-linearity used (ReLU...)
+
+Given 2 linear layers $$(W_1, b_1)$$ and $$(W_2, b_2)$$ and an input $$x \in \mathbb{R}_{in}$$, the 2-layer MLP performs:
+
+$$x \rightarrow W_{2}ReLU(W_{1}+b_{1}) + b_{2}$$
+
+In Pytorch,
+
+```python
+mlp = nn.Sequential(
+    nn.Linear(inp,h),
+    nn.ReLU(),
+    nn.Linear(h,out)
+)
+```
+
+### Hidden layers
+
+Hidden layers are layers that are neither inputs nor outputs of the model: they are everything in between the input and output layers.

@@ -21,3 +21,13 @@ $$\\{ f_{\theta_1k_3} \circ f_{\theta_2k_3} \circ f_{\theta_1k_2} \circ ... \cir
 - tous les paramètres $$\theta$$ dans chaque famille $$\Theta_k$$
 
 EN BREF: je comprends pas trop où passent les $$\theta$$ dans cette équation.
+
+### Hidden layers
+
+Why, in the 2-layer MLP, is the 1st layer a hidden layer ? For me, in a 2-layer model, 
+- layer 1 is an input layer
+- layer 2 is an output layer
+
+And there can be hidden layers only when we have 3+ layers (layer 1 = input, layer 3 = output, layer 2 = hidden).
+
+See: https://en.wikipedia.org/wiki/Hidden_layer
