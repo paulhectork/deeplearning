@@ -46,18 +46,19 @@ A linear layer:
     - a **weight matrix** $$W \in \mathbb{R}^{n_{out} \times n_{in}}$$ (more on that below)
 
 In more details:
-- **a layer is a family of functions** $$F_k = \\{ f_{\theta}: X -> Y | \theta \in \Theta \\}$$ (all functions performing a transformation from $$X$$ to $$Y$$)
+- **a layer is a family of functions** $$F_k = \\{ f_{\theta}: X \rightarrow Y | \theta \in \Theta \\}$$ (all functions performing a transformation from $$X$$ to $$Y$$)
 - **node/neurons** in the layer are functions $$f \in F_k$$ (one of the functions from that family, transforming $$X$$ to $$Y$$)
-- **connections** between layers are computations (application of $$f$$ to a specific input)
+- **connections** between layers are computations ($$f(x)$$, the application of $$f$$ to a specific input $$x$$)
 
 #### Affine layers
 
-**A linear layer is almost always an afine layer** that performs:
+A linear layer is **almost always** an afine layer that performs:
 
 $$x \rightarrow Wx + b$$
 
 Where:
-- $$x$$ is an input feature (usually matrix or vector), $$x \in \mathbb{R}^{n_{in}}$$,
+- $$x$$, $$W$$, $$b$$ are tensors
+- $$x$$ is an input feature, $$x \in \mathbb{R}^{n_{in}}$$,
 - $$W$$ is the weight matrix, $$W \in \mathbb{R}^{n_{out} \times n_{in}}$$ 
 - $$b$$ is a **learnable bias parameter** (matrix or vector), $$b \in \mathbb{R}^{n_{out}}$$
 - => the goal is to learn $$W$$ and $$b$$.
@@ -75,9 +76,9 @@ Where:
 $$W$$ is the weight matrix of a linear layer.
 
 - $$W$$ is a **learnable parameter**: the goal is to optimize $$W$$ to minimize the loss function
-- $$n^{in}$$ and $$n^{out}$$ are **hyperparameters**: 
+- $$W \in \mathbb{R}^{n_{in} \times n_{out}}$$, where $$n_{in}$$ and $$n_{out}$$ are **hyperparameters**: 
     - they are not learned, but defined by the user
-    - they define the parametric family of function of the linear layer of $$W$$ (a layer $$L$$ is defined as the parametric family of functions that perform $$\mathbb{R}^{n_{in}} \rightarrow \mathbb{R}^{n_{out}}$$
+    - they define the parametric family of function of the linear layer of $$W$$ (a layer $$F$$ is defined as the parametric family of functions that perform $$\mathbb{R}^{n_{in}} \rightarrow \mathbb{R}^{n_{out}}$$
 
 #### In Pytorch
 
