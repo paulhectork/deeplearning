@@ -103,9 +103,9 @@ A non-linear layer **does not have any learnable parameter**: they will apply th
 
 Non-linear layers are sometimes **not explicitly mentionned** in the litterature: it is often implied that linear layers are followed by non-linearity.
 
-#### Non-linear layers as activation functions
+#### Non-linear layers as activation functions 
 
-In practice, non-linear layers are often used as **activation functions**, transforming the output of a layer before passing it to the next layer.** Given 2 layers, $$L_n$$ and $$L_{n+1}$$:
+In practice, non-linear layers are often used as **activation functions**, transforming the output of a layer before passing it to the next layer. Given 2 layers, $$L_n$$ and $$L_{n+1}$$:
 -
 
 #### In Pytorch
