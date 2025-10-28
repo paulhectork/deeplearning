@@ -97,19 +97,19 @@ linear_layer = nn.Linear(in_features =10, out_features =5, bias = False)
 ### Non-linear layers
 
 A non-linear layer **does not have any learnable parameter**: they will apply the same operation to every component of the input. They are often **activation functions**. Some non-linear layers:
-- **hyperbolic tangent**
-- **logistic, or sigmoid**
-- **ReLU (Rectified Linear Unit)**. $$\forall x \in \mathbb{R}$$, it is defined by: $$\text{ReLU}(x) = max(x,0)$$
+- hyperbolic tangent
+- logistic, or sigmoid
+- ReLU (Rectified Linear Unit). $$\forall x \in \mathbb{R}$$, it is defined by: $$\text{ReLU}(x) = max(x,0)$$
 
 Non-linear layers are sometimes **not explicitly mentionned** in the litterature: it is often implied that linear layers are followed by non-linearity.
 
 #### Non-linear layers as activation functions 
 
-In practice, non-linear layers are often used as **activation functions**, transforming the output of a layer before passing it to the next layer. Given 2 layers, $$L_n$$ and $$L_{n+1}$$:
-- $$L_n$$ outputs $$x \in \mathbb{R}^{n_{out}}$$
+In practice, non-linear layers are often used as **activation functions**, transforming the output of a layer before passing it to the next layer. Given 2 layers, $$F_n$$ and $$F_{n+1}$$:
+- $$F_n$$ outputs $$x \in \mathbb{R}^{n_{out}}$$
 - $$x$$ is transformed by the non-linear activation function
-- $$L_{n+1}$$ receives the transformed $$x$$: 
-- given a value $$x \in \mathbb{R}^{n_{in}}$$ and a $$\text{ReLU}$$ activation function, $$L_{n+1}(\text{ReLU}(L_{n}(x)))$$, with a $$ReLU$$ activation function
+- $$F_{n+1}$$ receives the transformed $$x$$: 
+- given a value $$x \in \mathbb{R}^{n_{in}}$$ and a $$\text{ReLU}$$ activation function, $$F_{n+1}(\text{ReLU}(F_{n}(x)))$$, with a $$ReLU$$ activation function
 
 In summary, the activation function just changes (transforms) the output before passing it to the next layer—it does not block or drop information. Introducing nonlinearity allows the network to solve more complex tasks.
 
