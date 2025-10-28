@@ -125,6 +125,10 @@ In summary, the activation function just changes (transforms) the output before 
 relu_layer = nn.ReLU()
 ```
 
+### Hidden layers
+
+Hidden layers are layers that are neither inputs nor outputs of the model: they are everything in between the input and output layers.
+
 ---
 
 ## MLPs: Multi-layer perceptrons
@@ -144,10 +148,6 @@ A 2 layer MLP is defined by:
 Given 2 linear layers $$(W_1, b_1)$$ and $$(W_2, b_2)$$ and an input $$x \in \mathbb{R}_{in}$$, the 2-layer MLP performs:
 
 $$x \rightarrow W_{2}ReLU(W_{1}+b_{1}) + b_{2}$$
-
-### Hidden layers
-
-Hidden layers are layers that are neither inputs nor outputs of the model: they are everything in between the input and output layers.
 
 ### In Pytorch
 
