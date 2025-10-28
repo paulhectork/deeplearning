@@ -82,4 +82,4 @@ linear_layer = nn.Linear(in_features =10, out_features =5, bias = False)
 A non-linear layer **does not have any learnable parameter**: they will apply the same operation to every component of the input. Some non-linear layers:
 - **hyperbolic tangent**
 - **sigmoid**
-- **ReLU (Rectified Linear Unit)**. $$\for x \in \mathbb{R}$$, it is defined by: $$\text{ReLU}(x) = max(x,0)$$
+- **ReLU (Rectified Linear Unit)**. $$\forall x \in \mathbb{R}$$, it is defined by: $$\text{ReLU}(x) = max(x,0)$$
