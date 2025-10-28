@@ -26,10 +26,10 @@ A model space $$F$$ can be defined as **the space of the composite functions**:
 $$F = \\{ f_{K} \circ ... \circ f_{1} | f_{1} \in F_{1}, ..., F_{K} \\}$$
 
 Then,
+- each $$f_K$$ must belong to the proper family $$F_K$$ (i.e., the order of layers is important)
 - $$F_{K}$$ is a **layer**
 - **a feature** is the output of a layer. Features are passed to the next layer.
-- **the model space is parametrized** as: $$\Theta = \Theta_1 \times ... \times \Theta_{K}$$ (product of parameter space of all layers)
-- 
+- **the model space is parametrized** as: $$\Theta = \Theta_1 \times ... \times \Theta_{K}$$ (product of parameter space of all layers) 
 
 ---
 
@@ -43,6 +43,11 @@ A linear layer:
     - the **dimensions** of its input $$n_{in}$$ and outputs $$n_{out}$$
     - a **weight matrix** $$W \in \mathbb{R}^{n_{out} \times n_{in}}$$ (more on that below)
 
+In more details:
+- **a layer is a family of functions** $$F_k = \\{ f_{\theta}: X -> Y | \theta \in \Theta \\}$$ (all functions performing a transformation from $$X$$ to $$Y$$)
+- **node/neurons** in the layer are functions $$f \in F_k$$ (one of the functions from that family, transforming $$X$$ to $$Y$$)
+- **connections** between layers are computations (application of $$f$$ to a specific input)
+
 #### Affine layers
 
 **A linear layer is almost always an afine layer** that performs:
@@ -55,7 +60,13 @@ Where:
 - $$b$$ is a **learnable bias parameter** (matrix or vector), $$b \in \mathbb{R}^{n_{out}}$$
 - => the goal is to learn $$W$$ and $$b$$.
 
-**Linear layers are fully connected, or dense**: every neuron in the layer is connected to every neuron in the previous and subsequent layers.
+#### Fully connected layers
+
+**Linear layers are fully connected, or dense**: every neuron in the layer is connected to every neuron in the previous and subsequent layers. This means that:
+
+- all nodes from layer $$F_k$$ receive as input all outputs of the layer $$F_{k-1}$$
+- all nodes from layer $$F_k$$ output their result to all nodes of the layer $$F_{k+1}$$
+- a single neuron receives **a weighted sum of the outputs of all neurons in the previous layer**. The weight is determined by the weight $$W$$ of the layer
 
 #### Weight matrices
 
@@ -91,6 +102,11 @@ A non-linear layer **does not have any learnable parameter**: they will apply th
 - **ReLU (Rectified Linear Unit)**. $$\forall x \in \mathbb{R}$$, it is defined by: $$\text{ReLU}(x) = max(x,0)$$
 
 Non-linear layers are sometimes **not explicitly mentionned** in the litterature: it is often implied that linear layers are followed by non-linearity.
+
+#### Non-linear layers as activation functions
+
+In practice, non-linear layers are often used as **activation functions**, transforming the output of a layer before passing it to the next layer.** Given 2 layers, $$L_n$$ and $$L_{n+1}$$:
+-
 
 #### In Pytorch
 
