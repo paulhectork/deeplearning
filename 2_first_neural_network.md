@@ -23,4 +23,16 @@ A model space $$F$$ can be defined as **the space of the composite functions**:
 
 $$F = \\{ f_{K} \circ ... \circ f_{1} | f_{1} \in F_{1}, ..., F_{K} \\}$$
 
+Then,
+- $$F_{K}$$ is a **layer**
+- **a feature** is the output of a layer. Features are passed to the next layer.
+- **the model space is parametrized** as: $$\Theta = \Theta_1 \times ... \times \Theta_{K}$$ (product of parameter space of all layers)
+- 
 
+### Linear layers
+
+A linear layer 
+- **implements a linear operation**
+- is defined by:
+    - the **dimensions** of its input $$n_{in}$$ and outputs $$n_{out}$$
+    - a **weight matrix** $$W \in \textbb{R}^{n_{out} \times n_{in}}$$
