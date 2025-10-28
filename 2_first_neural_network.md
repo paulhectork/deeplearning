@@ -37,6 +37,8 @@ Then,
 
 ### Linear layers
 
+#### Definition
+
 A linear layer:
 - **implements a linear operation**
 - is defined by:
@@ -96,6 +98,8 @@ linear_layer = nn.Linear(in_features =10, out_features =5, bias = False)
 
 ### Non-linear layers
 
+#### Definition
+
 A non-linear layer **does not have any learnable parameter**: they will apply the same operation to every component of the input. They are often **activation functions**. Some non-linear layers:
 - hyperbolic tangent
 - logistic, or sigmoid
@@ -128,21 +132,32 @@ relu_layer = nn.ReLU()
 MLPs are **a simple succession of linear and non-linear layers**.
 - it is defined by a **set of hyperparameters**": number of layers, input and output dimensions, non-linearity used.
 - the hyperparameters defines a **model space**, parametrized by the concatenation of all the weights of all the linear layers.
+- then, the MLP is just a composition of layers $$f_n$$ alternating with activation functions $$a$$ : $$f_n \circ a \circ f_{n-1} \circ a \circ ... \circ a \circ f_1$$
 
 ### Example: 2-layer MLPs
 
-A 2 layer MLP is defined by:*
-- $$\text{in}$$ and $$\text{out}$$, input and output dimensions
+A 2 layer MLP is defined by:
+- $$\text{in}$$ and $$\text{out}$$, input and output dimensions of the MLP
 - $$h$$, the dimension of the output of the 1st linear layer (= input dimension of the 2nd linear layer)
-- the type of non-linearity used (ReLU...)
+- the type of non-linearity used ($$\text{ReLU}$$...)
 
 Given 2 linear layers $$(W_1, b_1)$$ and $$(W_2, b_2)$$ and an input $$x \in \mathbb{R}_{in}$$, the 2-layer MLP performs:
 
 $$x \rightarrow W_{2}ReLU(W_{1}+b_{1}) + b_{2}$$
 
-In Pytorch,
+### Hidden layers
+
+Hidden layers are layers that are neither inputs nor outputs of the model: they are everything in between the input and output layers.
+
+### In Pytorch
+
+An MLP can be defined using `nn.Sequential`:
 
 ```python
+# inp, out, h are hyperparameters.
+# inp = input dimension of MLP
+# out = output dimension of MLP
+# h = output dimension of layer 1
 mlp = nn.Sequential(
     nn.Linear(inp,h),
     nn.ReLU(),
@@ -150,6 +165,28 @@ mlp = nn.Sequential(
 )
 ```
 
-### Hidden layers
+Or as a class using `nn.Module`:
 
-Hidden layers are layers that are neither inputs nor outputs of the model: they are everything in between the input and output layers.
+```python
+class MLP(nn.Module):
+    # initialize the MLP by defining its layers and activating function
+    # parameters to __init__ are the model's hyperparameters
+    def __init__(self, inp, h, out):
+        super(MLP, self).__init__()
+        self.fc1 = nn.Linear(inp, h)
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(h, out)
+    
+    # `forward` defines the entire processing chain of this `nn.Module`
+    def forward(self, x):
+        # obviously, we apply our 2 layers and an intermediary ReLU between the 2 layers
+        x = self.fc1(x)
+        x = self.relu(x)
+        x = self.fc2(x)
+        return x
+
+# define an mlp
+mlp = MLP(inp, h, out)
+```
+
+
