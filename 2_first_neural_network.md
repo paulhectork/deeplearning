@@ -35,4 +35,4 @@ A linear layer
 - **implements a linear operation**
 - is defined by:
     - the **dimensions** of its input $$n_{in}$$ and outputs $$n_{out}$$
-    - a **weight matrix** $$W \in \textbb{R}^{n_{out} \times n_{in}}$$
+    - a **weight matrix** $$W \in \mathbb{R}^{n_{out} \times n_{in}}$$
