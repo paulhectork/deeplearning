@@ -26,8 +26,8 @@ A model space $$F$$ can be defined as **the space of the composite functions**:
 $$F = \\{ f_{K} \circ ... \circ f_{1} | f_{1} \in F_{1}, ..., F_{K} \\}$$
 
 Then,
-- each $$f_K$$ must belong to the proper family $$F_K$$ (i.e., the order of layers is important)
-- $$F_{K}$$ is a **layer**
+- **the order of layers is important**: each $$f_K$$ must belong to the proper family $$F_K$$ 
+- $$F_{K}$$ is a **layer**, that is a family of functions $$f \in F$$
 - **a feature** is the output of a layer. Features are passed to the next layer.
 - **the model space is parametrized** as: $$\Theta = \Theta_1 \times ... \times \Theta_{K}$$ (product of parameter space of all layers) 
 
